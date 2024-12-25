@@ -5,17 +5,17 @@ metadata:
 spec:
   containers:
   - name: config-pod
-  image: nginx
-  ports:
-  - containerPort: 80
-  env:
-  - name: course
-    valueFrom:
-      configMapKeyRef:
-        name: devops-config  # The ConfigMap this value comes from.
-        key: course          # The key to fetch.
-  - name: trainer
-    valueFrom:
-      configMapKeyRef:
-        name: devops-config
-        key: trainer
+    image: nginx
+    ports:
+    - containerPort: 80
+    env:
+    - name: course
+      valueFrom:
+        configMapKeyRef:
+          name: devops-config  # The ConfigMap this value comes from.
+          key: course          # The key to fetch.
+    - name: trainer
+      valueFrom:
+        configMapKeyRef:
+          name: devops-config
+          key: trainer
