@@ -42,7 +42,7 @@ spec:
         demo: deployment
     spec:
       containers:
-      - name: nginx
+      - name: nginx 
         image: nginx
         ports:
         - containerPort: 80
