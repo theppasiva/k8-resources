@@ -12,7 +12,7 @@ data:
           path: /usr/share/filebeat/modules.d/*.yml
           reload:
             enabled: true
-      modules:
+      modules: #input
       - module: nginx
         access:
           var.paths: ["/var/log/nginx/access.log*"]
@@ -41,7 +41,7 @@ spec:
         app: nginx
         demo: deployment
     spec:
-      containers:
+      containers: # main container
       - name: nginx 
         image: nginx
         ports:
@@ -62,7 +62,7 @@ spec:
       - name: nginx-logs
         emptyDir: {}
       - name: filebeat-config
-        configMap:
+        configMap: # configmap name
             name: filebeat-config
             items:
               - key: filebeat.yml
