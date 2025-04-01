@@ -11,6 +11,6 @@ spec:
     ports:
     - containerPort: 80
   tolerations:
-  - key: "project"
+  - key: "project1"
     operator: "Exists"
     effect: "NoSchedule"
